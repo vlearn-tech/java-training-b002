@@ -10,3 +10,5 @@ public class MyPrintUtils {
 		System.out.println(whatToPrint);
 	}
 }
+
+// SOLID - Design Principles

@@ -1,4 +1,4 @@
-package com.tech.javabasics.step01FirstProgram;
+package com.tech.javabasics.step99Project;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 public class Project {
 	String nameOfProject;
 	String projectCode;
+	String client;
 	LocalDate start;
 	LocalDate end;
 	Employee manager;
