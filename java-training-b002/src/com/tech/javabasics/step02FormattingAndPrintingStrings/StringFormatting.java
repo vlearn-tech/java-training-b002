@@ -1,4 +1,4 @@
-package com.tech.javabasics.step02PrintingStrings;
+package com.tech.javabasics.step02FormattingAndPrintingStrings;
 
 public class StringFormatting {
 	public static void main(String[] args) {

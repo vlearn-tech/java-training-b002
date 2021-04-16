@@ -1,4 +1,4 @@
-package com.tech.javabasics.step02PrintingStrings;
+package com.tech.javabasics.step02FormattingAndPrintingStrings;
 
 public class PrintAndPrintln {
 	public static void main(String[] args) {
