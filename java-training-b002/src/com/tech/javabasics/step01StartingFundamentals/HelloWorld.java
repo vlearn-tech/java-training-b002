@@ -1,4 +1,4 @@
-package com.tech.javabasics.step01FirstProgram;
+package com.tech.javabasics.step01StartingFundamentals;
 
 public class HelloWorld {
 	public static void main(String[] args) {

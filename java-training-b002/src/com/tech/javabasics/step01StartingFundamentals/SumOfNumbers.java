@@ -1,4 +1,4 @@
-package com.tech.javabasics.step01FirstProgram;
+package com.tech.javabasics.step01StartingFundamentals;
 
 public class SumOfNumbers {
 
@@ -12,8 +12,8 @@ public class SumOfNumbers {
 		MyPrintUtils.print(findTotal(100, 200));
 	}
 
-	private static Integer findTotal(Integer number1, Integer number2) {
-		Integer total = number1 + number2;
+	private static Integer findTotal(Integer num1, Integer num2) {
+		Integer total = num1 + num2;
 		return total;
 	}
 
