@@ -1,7 +1,6 @@
 package com.tech.javabasics.step99Project;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class Employee {
 	Integer id;
@@ -16,6 +15,6 @@ public class Employee {
 	Float totalExperience;
 	Boolean isMarried;
 	String[] hobbies;
-	List<Project> projectExperience;
+	Project currentProject;
 
 }

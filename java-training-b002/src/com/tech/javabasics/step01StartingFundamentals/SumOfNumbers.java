@@ -10,11 +10,11 @@ public class SumOfNumbers {
 		MyPrintUtils.print(sum);
 		MyPrintUtils.print(345);
 		MyPrintUtils.print(findTotal(100, 200));
+
 	}
 
 	private static Integer findTotal(Integer num1, Integer num2) {
 		Integer total = num1 + num2;
 		return total;
 	}
-
 }
