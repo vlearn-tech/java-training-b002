@@ -21,6 +21,12 @@ public class StringFormatting {
 		System.out.printf("Name of the employee is %s and he/she is %d years old.", name, age).println();
 		System.out.print(String.format("Name of the employee is %s and he/she is %d years old.", name, age));
 
+		System.out.println("\nHello \"World\"");
+		System.out.println("\nHello \"Amitav\", How are you doing today");
+
+		System.out.println("where name like 'A%'");
+		System.out.println(String.format("where name like '%s%%'", "A"));
+
 		// Ways to format String -
 		// a. Concatenation (+ Operator)
 		// b. String.format
