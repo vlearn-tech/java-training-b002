@@ -27,14 +27,26 @@ public class ArrayUtils {
 	}
 
 	public static Integer[] generateArrayWithRandomValues(int sizeOfArray) {
-		Integer[] nums = new Integer[sizeOfArray];
+		// Declare an array of the size expected/requested
+		Integer[] numArray = new Integer[sizeOfArray];
+
 		Random random = new Random();
 
+		// Generate random numbers and store in array
 		for (int i = 0; i < sizeOfArray; i++) {
-			nums[i] = random.nextInt(99);
+			numArray[i] = random.nextInt(99); // Generate a random positive value less than 99
 		}
 
-		return nums;
+		// Return the generated array
+		return numArray;
+	}
+
+	public static void print(Integer[] arrToPrint) {
+		System.out.print("[");
+		for (int i : arrToPrint) {
+			System.out.print(i + ", ");
+		}
+		System.out.println("]");
 	}
 
 }

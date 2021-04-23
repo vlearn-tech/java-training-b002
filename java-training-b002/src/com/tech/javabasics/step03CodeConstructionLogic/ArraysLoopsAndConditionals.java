@@ -30,6 +30,7 @@ public class ArraysLoopsAndConditionals {
 		Integer[] randomNumbers = ArrayUtils.generateArrayWithRandomValues(10);
 
 		ArrayUtils.printArrayContent(randomNumbers, 'X');
+
 	}
 
 }
