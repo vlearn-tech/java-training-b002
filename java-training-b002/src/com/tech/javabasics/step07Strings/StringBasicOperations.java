@@ -21,8 +21,11 @@ public class StringBasicOperations {
 			}
 		}
 		System.out.println("Is s present : " + isPresent);
-//		String nameStr = nameAsCharArray.toString();
-//		System.out.println(nameStr);
+
+		// How to convert Char Array to String
+		String nameStr = new String(nameAsCharArray);
+		System.out.println(nameStr);
+		System.out.println("Is s present : " + nameStr.contains("s"));
 
 		// Using String function
 		System.out.println("Is s present : " + name.contains("s"));
