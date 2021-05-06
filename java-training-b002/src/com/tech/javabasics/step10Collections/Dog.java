@@ -1,6 +1,6 @@
 package com.tech.javabasics.step10Collections;
 
-public class Dog {
+public class Dog implements Comparable<Dog> {
 	String name;
 	String color;
 
@@ -14,4 +14,14 @@ public class Dog {
 		return "Dog [name=" + name + ", color=" + color + "]";
 	}
 
+	@Override
+	public int compareTo(Dog anotherDog) {
+		// Default Comparison based on length of the name of the dog
+		int result = -1 * (this.name.length() - anotherDog.name.length());
+		return result;
+	}
+
 }
+
+//Dog [name=Bruno, color=Black] -- this
+//Dog [name=Tiger, color=Brown] -- anotherDog

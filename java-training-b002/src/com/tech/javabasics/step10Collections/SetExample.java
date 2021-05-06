@@ -13,14 +13,19 @@ public class SetExample {
 
 		System.out.println(names);
 
+		// Declare an ArrayList and add duplicate entries
 		List<String> namesInArrayList = new ArrayList<>();
 		namesInArrayList.addAll(names);
 		namesInArrayList.add("Frank");
 		namesInArrayList.add("Rahul");
 		namesInArrayList.add("Charlie");
+
+		// Duplicates are allowed in array list and hence can be seen here
 		System.out.println(namesInArrayList);
 
+		// Create a Set and copy entire array into the set
 		Set<String> namesInSet = new HashSet<>();
+		// No duplicates
 		namesInSet.addAll(namesInArrayList);
 
 		List<String> sortedList = new ArrayList(namesInSet);

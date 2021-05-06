@@ -10,6 +10,23 @@ public class ArrayListUsage {
 
 		String[] names = { "Akash", "Charlie", "Beena", "David", "Frank", "Sameer", "Rahul" };
 
+//		int[] nums = { 1, 4, 3, 2 };
+//		System.out.println(Arrays.toString(nums));
+//
+//		List<Integer> numbers = new ArrayList<>();
+//		numbers.add(0, 10);
+//		numbers.add(0, 20);
+//
+//		for (int i : nums) {
+//			numbers.add(0, i);
+//		}
+//
+//		numbers.add(0, 64);
+//
+//		System.out.println(numbers);
+//
+//		System.out.println("\n\n\n=======================\n\n\n");
+
 //		names[2] = null;
 
 		System.out.println(Arrays.toString(names));
@@ -51,7 +68,7 @@ public class ArrayListUsage {
 
 		// Remove element at specific position
 		nameList.remove(7);
-		System.out.println("Contents : " + nameList + " Size : " + nameList.size());
+		System.out.println("[DUPLICATE REMOVAL] : Contents : " + nameList + " Size : " + nameList.size());
 
 		// Find and remove the duplicates from the Array
 		List<String> uniqueValues = new ArrayList<>();
@@ -88,9 +105,9 @@ public class ArrayListUsage {
 
 		// Advanced Looping Constructs using Lambdas
 		System.out.println("\n============= U S I N G    F O R E A C H  ===============\n");
-		nameList.forEach(name -> {
-			if (name.contains("i")) {
-				System.out.println(name);
+		nameList.forEach(thisName -> {
+			if (thisName.contains("i")) {
+				System.out.println(thisName);
 			}
 		});
 
