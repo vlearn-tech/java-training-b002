@@ -1,5 +1,6 @@
 package com.tech.javabasics.step05operators;
 
+@SuppressWarnings("unused")
 public class UnaryOperation {
 	public static void main(String[] args) {
 		int age = 28;
@@ -17,7 +18,7 @@ public class UnaryOperation {
 			if (age >= 18) {
 				message = "You are eligible to vote";
 			} else {
-
+				// Nothing here
 			}
 		}
 

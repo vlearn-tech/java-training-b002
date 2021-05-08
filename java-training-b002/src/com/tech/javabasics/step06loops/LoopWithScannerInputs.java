@@ -2,6 +2,7 @@ package com.tech.javabasics.step06loops;
 
 import java.util.Scanner;
 
+@SuppressWarnings("unused")
 public class LoopWithScannerInputs {
 
 	static Scanner sc;

@@ -29,7 +29,7 @@ public class SetExample {
 		// No duplicates
 		namesInSet.addAll(namesInArrayList);
 
-		List<String> sortedList = new ArrayList(namesInSet);
+		List<String> sortedList = new ArrayList<>(namesInSet);
 		Collections.sort(sortedList);
 
 		System.out.println(sortedList);
