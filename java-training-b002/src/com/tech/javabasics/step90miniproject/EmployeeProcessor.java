@@ -21,10 +21,6 @@ public class EmployeeProcessor {
 			employeeList.add(mapToEmployee(record));
 		}
 
-//		for (Employee e : employeeList) {
-//			System.out.println(e);
-//		}
-
 		System.out.println("\n\n============== R E P O R T  -  1 =====================");
 //		Find sum of salary of all unmarried people - Filter
 		Long totalSalaryOfUnmarriedEmployees = 0L;
