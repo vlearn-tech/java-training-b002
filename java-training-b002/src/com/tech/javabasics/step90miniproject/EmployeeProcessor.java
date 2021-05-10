@@ -100,9 +100,7 @@ public class EmployeeProcessor {
 	}
 
 	private static LocalDate getDateFromString(String inputString) {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
-		LocalDate dateValue = LocalDate.parse(inputString, formatter);
-		return dateValue;
+		return LocalDate.parse(inputString, DateTimeFormatter.ofPattern("M/d/yyyy"));
 	}
 
 }
