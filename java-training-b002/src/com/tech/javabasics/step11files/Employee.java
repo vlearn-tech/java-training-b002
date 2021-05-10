@@ -1,11 +1,13 @@
-package com.tech.javabasics.step90miniproject;
+package com.tech.javabasics.step11files;
 
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
-@SuppressWarnings("unused")
-public class Employee {
+public class Employee implements Serializable {
 
+	private static final long serialVersionUID = 3227878322850367130L;
 	private Long id;
 	private String firstName;
 	private String lastName;
@@ -99,5 +101,26 @@ public class Employee {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", isMarried=" + isMarried
 				+ ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", dateOfJoining=" + dateOfJoining
 				+ ", salary=" + salary + ", region=" + region + ", age=" + getAge() + "]";
+	}
+
+	public static Employee mapToEmployee(String recordString) {
+		String[] recordElements = recordString.split(",");
+		Employee emp = new Employee();
+		emp.setId(Long.valueOf(recordElements[0]));
+		emp.setFirstName(recordElements[1]);
+		emp.setLastName(recordElements[2]);
+		emp.setIsMarried(Boolean.valueOf(recordElements[3]));
+		emp.setGender(recordElements[4].charAt(0));
+		emp.setDateOfBirth(getDateFromString(recordElements[5]));
+		emp.setDateOfJoining(getDateFromString(recordElements[6]));
+		emp.setSalary(Integer.valueOf(recordElements[7]));
+		emp.setRegion(recordElements[8]);
+		return emp;
+	}
+
+	private static LocalDate getDateFromString(String inputString) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
+		LocalDate dateValue = LocalDate.parse(inputString, formatter);
+		return dateValue;
 	}
 }

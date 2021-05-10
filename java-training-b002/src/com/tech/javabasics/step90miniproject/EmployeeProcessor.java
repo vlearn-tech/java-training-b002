@@ -6,7 +6,9 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeProcessor {
 	public static void main(String[] args) throws IOException {
@@ -23,6 +25,7 @@ public class EmployeeProcessor {
 //			System.out.println(e);
 //		}
 
+		System.out.println("\n\n============== R E P O R T  -  1 =====================");
 //		Find sum of salary of all unmarried people - Filter
 		Long totalSalaryOfUnmarriedEmployees = 0L;
 		Long totalSalaryOfAllEmployees = 0L;
@@ -34,6 +37,8 @@ public class EmployeeProcessor {
 			}
 		}
 		System.out.println("Sum of salary of all unmarried people = " + totalSalaryOfUnmarriedEmployees);
+
+		System.out.println("\n\n============== R E P O R T  -  2 =====================");
 
 //		Find out how many people younger than 40 are earning more than the average payout at the company - Filter + Avg
 		Integer avgSalary = ((Long) (totalSalaryOfAllEmployees / employeeList.size())).intValue();
@@ -47,8 +52,39 @@ public class EmployeeProcessor {
 		System.out.println("# of people younger than 40 are earning more than the average payout at the company = "
 				+ numOfEmployeeEarningMoreThanAvg);
 
+		System.out.println("\n\n============== R E P O R T  -  3 =====================");
+
 //		Create a summary of number of people, total experience and average salary by region - Missing data
+
+		// Region :: # of People (count) : Total Exp (sum) : Total Salary/# of people (avg)
+
+		// Create the final summary map in which the report will be stored for each region. Mark region as
+		// the key
+		Map<String, EmployeeSummary> regionalSummaryMap = new HashMap<>();
+
+		// Walk through all the employees
+		for (Employee e : employeeList) {
+			// Create an entry for the region if not already present in the summary map
+			if (!regionalSummaryMap.containsKey(e.getRegion())) {
+				regionalSummaryMap.put(e.getRegion(), new EmployeeSummary());
+			}
+
+			// Find the summary details for the region, and call the update functionality to regenerate the
+			// summary taking into consideration this additional employee
+			EmployeeSummary es = regionalSummaryMap.get(e.getRegion());
+			es.updateRegionalSummary(e);
+		}
+
+		System.out.println(regionalSummaryMap);
+		// TODO: 1 : Call a separate method to store this report in a Object File and a Text File.
+
+		System.out.println("\n\n============== R E P O R T  -  4 =====================");
 //		Find employees with names more than 5 characters, having an 'e' in them, married, and having less than average salary
+		for (Employee e : employeeList) {
+			if (e.getFirstName().toLowerCase().contains("e") && e.getIsMarried() && e.getSalary() < avgSalary) {
+				System.out.println(e);
+			}
+		}
 
 	}
 

@@ -5,14 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class ReadingFiles {
+public class CopyFile {
 	public static void main(String[] args) throws IOException {
 
 		List<String> lines = Files.readAllLines(Paths.get("C:\\Users\\HP\\Desktop\\JavaFiles\\SampleCSVFile.csv"));
+		Files.write(Paths.get("C:\\Users\\HP\\Desktop\\JavaFiles\\SampleCSVFile_Copy.csv"), lines);
 
-		for (String rec : lines) {
-			System.out.println(rec);
-		}
-
+		System.out.println("File copied");
 	}
 }
