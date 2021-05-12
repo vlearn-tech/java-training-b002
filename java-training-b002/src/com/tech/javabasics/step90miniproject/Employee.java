@@ -100,4 +100,23 @@ public class Employee {
 				+ ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", dateOfJoining=" + dateOfJoining
 				+ ", salary=" + salary + ", region=" + region + ", age=" + getAge() + "]";
 	}
+
+	// Copy constructor - copy the details of refEmployee into "this" employee object
+	public Employee(Employee refEmployee) {
+		this.id = refEmployee.id;
+		this.firstName = refEmployee.firstName;
+		this.lastName = refEmployee.lastName;
+		this.isMarried = refEmployee.isMarried;
+		this.gender = refEmployee.gender;
+		this.dateOfBirth = refEmployee.dateOfBirth;
+		this.dateOfJoining = refEmployee.dateOfJoining;
+		this.salary = refEmployee.salary;
+		this.region = refEmployee.region;
+		this.age = refEmployee.age;
+	}
+
+	// Default constructor
+	public Employee() {
+	}
+
 }
