@@ -19,6 +19,12 @@ public class Pet {
 		this.name = name;
 		this.color = color;
 		this.owner = owner;
+		System.out.println("Pet object being created for :: " + this.name);
+	}
+
+	// Default constructor
+	public Pet() {
+		System.out.println("Default and Empty Pet object being created");
 	}
 
 	void specialFunda() {

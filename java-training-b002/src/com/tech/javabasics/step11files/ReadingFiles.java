@@ -8,7 +8,7 @@ import java.util.List;
 public class ReadingFiles {
 	public static void main(String[] args) throws IOException {
 
-		List<String> lines = Files.readAllLines(Paths.get("C:\\Users\\HP\\Desktop\\JavaFiles\\SampleCSVFile.csv"));
+		List<String> lines = Files.readAllLines(Paths.get("C:\\Users\\HP\\Desktop\\JavaFiles", "SampleCSVFile.csv"));
 
 		for (String rec : lines) {
 			System.out.println(rec);

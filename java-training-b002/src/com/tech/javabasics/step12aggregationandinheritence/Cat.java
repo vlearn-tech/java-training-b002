@@ -24,6 +24,7 @@ public class Cat extends Pet {
 	public Cat(String name, String color, Person owner, boolean goesToOtherPeopleHouse) {
 		super(name, color, owner);
 		this.goesToOtherPeopleHouse = goesToOtherPeopleHouse;
+		System.out.println("Cat object created for  :: " + this.name);
 	}
 
 }

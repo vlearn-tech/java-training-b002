@@ -6,10 +6,10 @@ public class DataLoaderAndRunner {
 		Address newAddress = new Address("B-123 Some Apartment, Patia", "Bhubaneswar", 751024L);
 		rahul.address = newAddress;
 
-		Dog bruno = new Dog("Bruno", "Brown", rahul, true);
-		Dog spooky = new Dog("Spooky", "Black", rahul, false);
-		Cat silver = new Cat("Silver", "White", rahul, Boolean.TRUE);
-		Horse skipper = new Horse("Skipper", "Grey", rahul);
+		Pet bruno = new Dog("Bruno", "Brown", rahul, true);
+		Pet spooky = new Dog("Spooky", "Black", rahul, false);
+		Pet silver = new Cat("Silver", "White", rahul, Boolean.TRUE);
+		Pet skipper = new Horse("Skipper", "Grey", rahul);
 
 		// Despite pets being of different types, since all are "Pet"s hence Java allows to store all in
 		// same list
@@ -23,6 +23,7 @@ public class DataLoaderAndRunner {
 		// You can run the loop on the Pets
 		for (Pet p : rahul.pets) {
 			p.printDetailsOfPet();
+//			p.specialFunda();
 
 			// instanceof checks the exact type of the object
 			if (p instanceof Dog) {

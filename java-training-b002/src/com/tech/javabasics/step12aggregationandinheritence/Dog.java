@@ -24,6 +24,7 @@ public class Dog extends Pet {
 	public Dog(String name, String color, Person owner, boolean isAwakeAtNight) {
 		super(name, color, owner);
 		this.isAwakeAtNight = isAwakeAtNight;
+		System.out.println("Dog object created for  :: " + this.name);
 	}
 
 }
