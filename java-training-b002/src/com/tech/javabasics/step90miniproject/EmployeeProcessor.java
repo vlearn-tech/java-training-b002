@@ -1,8 +1,11 @@
 package com.tech.javabasics.step90miniproject;
 
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -17,8 +20,11 @@ public class EmployeeProcessor {
 				.readAllLines(Paths.get("C:\\Users\\HP\\Desktop\\JavaFiles", "SampleCSVFile.csv"));
 
 		List<Employee> employeeList = new ArrayList<>();
+		int index = 0;
 		for (String record : allEmployeeRecords) {
-			employeeList.add(mapToEmployee(record));
+			if (index++ > 0) {
+				employeeList.add(mapToEmployee(record));
+			}
 		}
 
 		System.out.println("\n\n============== R E P O R T  -  1 =====================");
@@ -72,7 +78,27 @@ public class EmployeeProcessor {
 		}
 
 		System.out.println(regionalSummaryMap);
-		// TODO: 1 : Call a separate method to store this report in a Object File and a Text File.
+		// Store this report into Text File
+		Path filePath = Paths.get("C:\\Users\\HP\\Desktop\\JavaFiles", "EmployeeReportAsText.txt");
+		Files.deleteIfExists(filePath);
+		Files.createFile(filePath);
+
+		for (String key : regionalSummaryMap.keySet()) {
+			String whatToWrite = String.format("%s - %s\n", key, regionalSummaryMap.get(key));
+			Files.writeString(filePath, whatToWrite, StandardOpenOption.APPEND);
+		}
+
+		// Writing into an object file
+		// Refer to ReadEmployeeRegionalReport class for reading the contents of the below object file
+		ObjectOutputStream employeeReportObjectStream = new ObjectOutputStream(
+				Files.newOutputStream(Paths.get("C:\\Users\\HP\\Desktop\\JavaFiles\\EmployeeReportAsObject.txt")));
+
+		for (String key : regionalSummaryMap.keySet()) {
+			EmployeeRegionalReport thisReport = new EmployeeRegionalReport(key, regionalSummaryMap.get(key));
+			employeeReportObjectStream.writeObject(thisReport);
+		}
+
+		employeeReportObjectStream.close();
 
 		System.out.println("\n\n============== R E P O R T  -  4 =====================");
 //		Find employees with names more than 5 characters, having an 'e' in them, married, and having less than average salary

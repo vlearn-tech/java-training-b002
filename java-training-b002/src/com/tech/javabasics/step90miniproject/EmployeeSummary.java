@@ -19,7 +19,7 @@ public class EmployeeSummary {
 	@Override
 	public String toString() {
 		return "EmployeeSummary [numOfPeople=" + numOfPeople + ", totalExperience=" + totalExperience + ", totalSalary="
-				+ totalSalary + ", averageSalary=" + averageSalary + "]";
+				+ totalSalary + ", averageSalary=" + Math.round(averageSalary) + "]";
 	}
 
 }
